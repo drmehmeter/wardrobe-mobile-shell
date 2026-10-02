@@ -1,0 +1,14 @@
+.git/
+.expo/
+node_modules/
+dist/
+tests/
+.env*
+.dev.vars*
+credentials.json
+*.p12
+*.p8
+*.mobileprovision
+*.db
+*.sqlite*
+*.log
