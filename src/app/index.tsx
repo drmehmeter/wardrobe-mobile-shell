@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 import { ActivityIndicator, Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { WebView } from 'react-native-webview';
+import { VersionBadge } from '../components/VersionBadge';
 import { canNavigate, SITE_URL } from '../domain/navigation';
 
 export default function Wardrobe() {
@@ -17,7 +18,8 @@ export default function Wardrobe() {
     try { await Linking.openURL(SITE_URL); }
     catch { setNotice('Tarayıcı açılamadı. Lütfen yeniden dene.'); }
   }
-  return <SafeAreaView style={s.screen} edges={['top', 'bottom']}>
+  return <SafeAreaView style={s.screen} edges={['top', 'bottom', 'left', 'right']}>
+    <VersionBadge />
     <View style={s.toolbar}>
       <Pressable accessibilityRole="button" accessibilityLabel="Geri" accessibilityState={{ disabled: !back }} disabled={!back} onPress={() => web.current?.goBack()} style={s.button}><Text style={!back && s.disabled}>Geri</Text></Pressable>
       <Text style={s.title}>Wardrobe</Text>

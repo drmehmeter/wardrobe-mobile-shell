@@ -2,6 +2,7 @@
 .expo/
 node_modules/
 dist/
+build-metadata.json
 tests/
 .env*
 .dev.vars*

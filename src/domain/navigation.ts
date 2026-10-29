@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://mehmet-zegna-atelier.dr-mehmeter.chatgpt.site/';
+export const SITE_URL = 'https://fasherd.dr-mehmeter.chatgpt.site/';
 const ALLOWED_ORIGINS = new Set([new URL(SITE_URL).origin, 'https://auth.openai.com', 'https://chatgpt.com']);
 
 /** Navigation stays within the observed Site / OpenAI login flow. Never inspect cookies or tokens. */

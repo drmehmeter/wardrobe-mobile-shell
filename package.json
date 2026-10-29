@@ -1,9 +1,10 @@
 {
   "name": "wardrobe-ios-webview",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "expo-router/entry",
   "dependencies": {
     "expo": "~57.0.26",
+    "expo-application": "~57.0.3",
     "expo-constants": "~57.0.20",
     "expo-linking": "~57.0.11",
     "expo-router": "~57.0.24",
@@ -34,7 +35,9 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "node --import tsx --test tests/*.test.ts",
-    "export:ios": "expo export --platform ios --output-dir dist --max-workers 1"
+    "export:ios": "npm run stamp:build && expo export --platform ios --output-dir dist --max-workers 1",
+    "stamp:build": "node scripts/stamp-build.cjs",
+    "eas-build-post-install": "npm run stamp:build"
   },
   "private": true
 }
